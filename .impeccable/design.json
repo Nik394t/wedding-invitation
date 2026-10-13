@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T09:12:34+03:00",
+  "title": "Design System: Свадебное приглашение",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Кремовая бумага",
+        "canonical": "#f2e7dc",
+        "tonalRamp": [
+          "oklch(15% 0.019 67.6)",
+          "oklch(25% 0.019 67.6)",
+          "oklch(35% 0.019 67.6)",
+          "oklch(45% 0.019 67.6)",
+          "oklch(55% 0.019 67.6)",
+          "oklch(65% 0.019 67.6)",
+          "oklch(78% 0.019 67.6)",
+          "oklch(92% 0.019 67.6)"
+        ]
+      },
+      "paper-light": {
+        "role": "neutral",
+        "displayName": "Светлая бумага",
+        "canonical": "#faf2e9",
+        "tonalRamp": [
+          "oklch(15% 0.015 70.9)",
+          "oklch(25% 0.015 70.9)",
+          "oklch(35% 0.015 70.9)",
+          "oklch(45% 0.015 70.9)",
+          "oklch(55% 0.015 70.9)",
+          "oklch(65% 0.015 70.9)",
+          "oklch(78% 0.015 70.9)",
+          "oklch(92% 0.015 70.9)"
+        ]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Тёплая тень бумаги",
+        "canonical": "#e6d6c8",
+        "tonalRamp": [
+          "oklch(15% 0.026 63.7)",
+          "oklch(25% 0.026 63.7)",
+          "oklch(35% 0.026 63.7)",
+          "oklch(45% 0.026 63.7)",
+          "oklch(55% 0.026 63.7)",
+          "oklch(65% 0.026 63.7)",
+          "oklch(78% 0.026 63.7)",
+          "oklch(92% 0.026 63.7)"
+        ]
+      },
+      "envelope": {
+        "role": "secondary",
+        "displayName": "Пудровый конверт",
+        "canonical": "#e7d0cc",
+        "tonalRamp": [
+          "oklch(15% 0.026 29.4)",
+          "oklch(25% 0.026 29.4)",
+          "oklch(35% 0.026 29.4)",
+          "oklch(45% 0.026 29.4)",
+          "oklch(55% 0.026 29.4)",
+          "oklch(65% 0.026 29.4)",
+          "oklch(78% 0.026 29.4)",
+          "oklch(92% 0.026 29.4)"
+        ]
+      },
+      "envelope-light": {
+        "role": "secondary",
+        "displayName": "Свет на конверте",
+        "canonical": "#f0dedb",
+        "tonalRamp": [
+          "oklch(15% 0.020 28.9)",
+          "oklch(25% 0.020 28.9)",
+          "oklch(35% 0.020 28.9)",
+          "oklch(45% 0.020 28.9)",
+          "oklch(55% 0.020 28.9)",
+          "oklch(65% 0.020 28.9)",
+          "oklch(78% 0.020 28.9)",
+          "oklch(92% 0.020 28.9)"
+        ]
+      },
+      "envelope-shade": {
+        "role": "secondary",
+        "displayName": "Тень на конверте",
+        "canonical": "#d7bab6",
+        "tonalRamp": [
+          "oklch(15% 0.034 27.2)",
+          "oklch(25% 0.034 27.2)",
+          "oklch(35% 0.034 27.2)",
+          "oklch(45% 0.034 27.2)",
+          "oklch(55% 0.034 27.2)",
+          "oklch(65% 0.034 27.2)",
+          "oklch(78% 0.034 27.2)",
+          "oklch(92% 0.034 27.2)"
+        ]
+      },
+      "rose-powder": {
+        "role": "secondary",
+        "displayName": "Пудровая роза",
+        "canonical": "#ecd5d5",
+        "tonalRamp": [
+          "oklch(15% 0.026 17.6)",
+          "oklch(25% 0.026 17.6)",
+          "oklch(35% 0.026 17.6)",
+          "oklch(45% 0.026 17.6)",
+          "oklch(55% 0.026 17.6)",
+          "oklch(65% 0.026 17.6)",
+          "oklch(78% 0.026 17.6)",
+          "oklch(92% 0.026 17.6)"
+        ]
+      },
+      "rose-light": {
+        "role": "secondary",
+        "displayName": "Светлая пыльная роза",
+        "canonical": "#dbb5b8",
+        "tonalRamp": [
+          "oklch(15% 0.044 12.8)",
+          "oklch(25% 0.044 12.8)",
+          "oklch(35% 0.044 12.8)",
+          "oklch(45% 0.044 12.8)",
+          "oklch(55% 0.044 12.8)",
+          "oklch(65% 0.044 12.8)",
+          "oklch(78% 0.044 12.8)",
+          "oklch(92% 0.044 12.8)"
+        ]
+      },
+      "rose": {
+        "role": "secondary",
+        "displayName": "Пыльная роза",
+        "canonical": "#c9979d",
+        "tonalRamp": [
+          "oklch(15% 0.061 10.7)",
+          "oklch(25% 0.061 10.7)",
+          "oklch(35% 0.061 10.7)",
+          "oklch(45% 0.061 10.7)",
+          "oklch(55% 0.061 10.7)",
+          "oklch(65% 0.061 10.7)",
+          "oklch(78% 0.061 10.7)",
+          "oklch(92% 0.061 10.7)"
+        ]
+      },
+      "rose-muted": {
+        "role": "secondary",
+        "displayName": "Тёмная пыльная роза",
+        "canonical": "#a86d76",
+        "tonalRamp": [
+          "oklch(15% 0.076 9.6)",
+          "oklch(25% 0.076 9.6)",
+          "oklch(35% 0.076 9.6)",
+          "oklch(45% 0.076 9.6)",
+          "oklch(55% 0.076 9.6)",
+          "oklch(65% 0.076 9.6)",
+          "oklch(78% 0.076 9.6)",
+          "oklch(92% 0.076 9.6)"
+        ]
+      },
+      "wine": {
+        "role": "primary",
+        "displayName": "Бордовая краска",
+        "canonical": "#7a2f38",
+        "tonalRamp": [
+          "oklch(15% 0.105 15.7)",
+          "oklch(25% 0.105 15.7)",
+          "oklch(35% 0.105 15.7)",
+          "oklch(45% 0.105 15.7)",
+          "oklch(55% 0.105 15.7)",
+          "oklch(65% 0.105 15.7)",
+          "oklch(78% 0.105 15.7)",
+          "oklch(92% 0.105 15.7)"
+        ]
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Тёмный бордовый",
+        "canonical": "#5a222c",
+        "tonalRamp": [
+          "oklch(15% 0.083 11.7)",
+          "oklch(25% 0.083 11.7)",
+          "oklch(35% 0.083 11.7)",
+          "oklch(45% 0.083 11.7)",
+          "oklch(55% 0.083 11.7)",
+          "oklch(65% 0.083 11.7)",
+          "oklch(78% 0.083 11.7)",
+          "oklch(92% 0.083 11.7)"
+        ]
+      },
+      "wine-night": {
+        "role": "primary",
+        "displayName": "Вечерний бордовый",
+        "canonical": "#4f1e29",
+        "tonalRamp": [
+          "oklch(15% 0.074 8.5)",
+          "oklch(25% 0.074 8.5)",
+          "oklch(35% 0.074 8.5)",
+          "oklch(45% 0.074 8.5)",
+          "oklch(55% 0.074 8.5)",
+          "oklch(65% 0.074 8.5)",
+          "oklch(78% 0.074 8.5)",
+          "oklch(92% 0.074 8.5)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Тёплые чернила",
+        "canonical": "#43383a",
+        "tonalRamp": [
+          "oklch(15% 0.016 5.6)",
+          "oklch(25% 0.016 5.6)",
+          "oklch(35% 0.016 5.6)",
+          "oklch(45% 0.016 5.6)",
+          "oklch(55% 0.016 5.6)",
+          "oklch(65% 0.016 5.6)",
+          "oklch(78% 0.016 5.6)",
+          "oklch(92% 0.016 5.6)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Мягкие чернила",
+        "canonical": "#6a585b",
+        "tonalRamp": [
+          "oklch(15% 0.024 6.7)",
+          "oklch(25% 0.024 6.7)",
+          "oklch(35% 0.024 6.7)",
+          "oklch(45% 0.024 6.7)",
+          "oklch(55% 0.024 6.7)",
+          "oklch(65% 0.024 6.7)",
+          "oklch(78% 0.024 6.7)",
+          "oklch(92% 0.024 6.7)"
+        ]
+      },
+      "silver-hi": {
+        "role": "neutral",
+        "displayName": "Блик фольги",
+        "canonical": "#f6f4f2",
+        "tonalRamp": [
+          "oklch(15% 0.003 67.8)",
+          "oklch(25% 0.003 67.8)",
+          "oklch(35% 0.003 67.8)",
+          "oklch(45% 0.003 67.8)",
+          "oklch(55% 0.003 67.8)",
+          "oklch(65% 0.003 67.8)",
+          "oklch(78% 0.003 67.8)",
+          "oklch(92% 0.003 67.8)"
+        ]
+      },
+      "silver": {
+        "role": "neutral",
+        "displayName": "Серебряная фольга",
+        "canonical": "#b9b4b2",
+        "tonalRamp": [
+          "oklch(15% 0.006 43.3)",
+          "oklch(25% 0.006 43.3)",
+          "oklch(35% 0.006 43.3)",
+          "oklch(45% 0.006 43.3)",
+          "oklch(55% 0.006 43.3)",
+          "oklch(65% 0.006 43.3)",
+          "oklch(78% 0.006 43.3)",
+          "oklch(92% 0.006 43.3)"
+        ]
+      },
+      "silver-lo": {
+        "role": "neutral",
+        "displayName": "Тень фольги",
+        "canonical": "#8a8482",
+        "tonalRamp": [
+          "oklch(15% 0.008 39.4)",
+          "oklch(25% 0.008 39.4)",
+          "oklch(35% 0.008 39.4)",
+          "oklch(45% 0.008 39.4)",
+          "oklch(55% 0.008 39.4)",
+          "oklch(65% 0.008 39.4)",
+          "oklch(78% 0.008 39.4)",
+          "oklch(92% 0.008 39.4)"
+        ]
+      },
+      "rose-deep": {
+        "role": "secondary",
+        "displayName": "Глубокая роза",
+        "canonical": "#8f4a56",
+        "tonalRamp": [
+          "oklch(15% 0.094 10.0)",
+          "oklch(25% 0.094 10.0)",
+          "oklch(35% 0.094 10.0)",
+          "oklch(45% 0.094 10.0)",
+          "oklch(55% 0.094 10.0)",
+          "oklch(65% 0.094 10.0)",
+          "oklch(78% 0.094 10.0)",
+          "oklch(92% 0.094 10.0)"
+        ]
+      },
+      "wax-light": {
+        "role": "primary",
+        "displayName": "Блик сургуча",
+        "canonical": "#a54f5a",
+        "tonalRamp": [
+          "oklch(15% 0.114 13.7)",
+          "oklch(25% 0.114 13.7)",
+          "oklch(35% 0.114 13.7)",
+          "oklch(45% 0.114 13.7)",
+          "oklch(55% 0.114 13.7)",
+          "oklch(65% 0.114 13.7)",
+          "oklch(78% 0.114 13.7)",
+          "oklch(92% 0.114 13.7)"
+        ]
+      },
+      "sepia": {
+        "role": "neutral",
+        "displayName": "Сепия",
+        "canonical": "#d8bfa8",
+        "tonalRamp": [
+          "oklch(15% 0.042 64.8)",
+          "oklch(25% 0.042 64.8)",
+          "oklch(35% 0.042 64.8)",
+          "oklch(45% 0.042 64.8)",
+          "oklch(55% 0.042 64.8)",
+          "oklch(65% 0.042 64.8)",
+          "oklch(78% 0.042 64.8)",
+          "oklch(92% 0.042 64.8)"
+        ]
+      },
+      "swatch-graphite": {
+        "role": "neutral",
+        "displayName": "Образец: дымчатый графит",
+        "canonical": "#625657",
+        "tonalRamp": [
+          "oklch(15% 0.016 12.0)",
+          "oklch(25% 0.016 12.0)",
+          "oklch(35% 0.016 12.0)",
+          "oklch(45% 0.016 12.0)",
+          "oklch(55% 0.016 12.0)",
+          "oklch(65% 0.016 12.0)",
+          "oklch(78% 0.016 12.0)",
+          "oklch(92% 0.016 12.0)"
+        ]
+      },
+      "swatch-dusty-rose": {
+        "role": "secondary",
+        "displayName": "Образец: припылённая роза",
+        "canonical": "#a6787c",
+        "tonalRamp": [
+          "oklch(15% 0.058 13.1)",
+          "oklch(25% 0.058 13.1)",
+          "oklch(35% 0.058 13.1)",
+          "oklch(45% 0.058 13.1)",
+          "oklch(55% 0.058 13.1)",
+          "oklch(65% 0.058 13.1)",
+          "oklch(78% 0.058 13.1)",
+          "oklch(92% 0.058 13.1)"
+        ]
+      },
+      "swatch-soft-rose": {
+        "role": "secondary",
+        "displayName": "Образец: мягкий розовый",
+        "canonical": "#c68e93",
+        "tonalRamp": [
+          "oklch(15% 0.068 13.0)",
+          "oklch(25% 0.068 13.0)",
+          "oklch(35% 0.068 13.0)",
+          "oklch(45% 0.068 13.0)",
+          "oklch(55% 0.068 13.0)",
+          "oklch(65% 0.068 13.0)",
+          "oklch(78% 0.068 13.0)",
+          "oklch(92% 0.068 13.0)"
+        ]
+      },
+      "swatch-powder": {
+        "role": "secondary",
+        "displayName": "Образец: пудровый",
+        "canonical": "#dcb4bb",
+        "tonalRamp": [
+          "oklch(15% 0.047 6.4)",
+          "oklch(25% 0.047 6.4)",
+          "oklch(35% 0.047 6.4)",
+          "oklch(45% 0.047 6.4)",
+          "oklch(55% 0.047 6.4)",
+          "oklch(65% 0.047 6.4)",
+          "oklch(78% 0.047 6.4)",
+          "oklch(92% 0.047 6.4)"
+        ]
+      },
+      "swatch-light-powder": {
+        "role": "secondary",
+        "displayName": "Образец: светлая пудра",
+        "canonical": "#ead0d5",
+        "tonalRamp": [
+          "oklch(15% 0.030 4.6)",
+          "oklch(25% 0.030 4.6)",
+          "oklch(35% 0.030 4.6)",
+          "oklch(45% 0.030 4.6)",
+          "oklch(55% 0.030 4.6)",
+          "oklch(65% 0.030 4.6)",
+          "oklch(78% 0.030 4.6)",
+          "oklch(92% 0.030 4.6)"
+        ]
+      },
+      "swatch-rose-accent": {
+        "role": "secondary",
+        "displayName": "Образец: розовый акцент",
+        "canonical": "#de8e9a",
+        "tonalRamp": [
+          "oklch(15% 0.098 10.0)",
+          "oklch(25% 0.098 10.0)",
+          "oklch(35% 0.098 10.0)",
+          "oklch(45% 0.098 10.0)",
+          "oklch(55% 0.098 10.0)",
+          "oklch(65% 0.098 10.0)",
+          "oklch(78% 0.098 10.0)",
+          "oklch(92% 0.098 10.0)"
+        ]
+      },
+      "swatch-coral": {
+        "role": "secondary",
+        "displayName": "Образец: приглушённый коралл",
+        "canonical": "#b85f60",
+        "tonalRamp": [
+          "oklch(15% 0.115 20.5)",
+          "oklch(25% 0.115 20.5)",
+          "oklch(35% 0.115 20.5)",
+          "oklch(45% 0.115 20.5)",
+          "oklch(55% 0.115 20.5)",
+          "oklch(65% 0.115 20.5)",
+          "oklch(78% 0.115 20.5)",
+          "oklch(92% 0.115 20.5)"
+        ]
+      },
+      "swatch-burgundy": {
+        "role": "primary",
+        "displayName": "Образец: глубокий бордовый",
+        "canonical": "#84474a",
+        "tonalRamp": [
+          "oklch(15% 0.083 17.6)",
+          "oklch(25% 0.083 17.6)",
+          "oklch(35% 0.083 17.6)",
+          "oklch(45% 0.083 17.6)",
+          "oklch(55% 0.083 17.6)",
+          "oklch(65% 0.083 17.6)",
+          "oklch(78% 0.083 17.6)",
+          "oklch(92% 0.083 17.6)"
+        ]
+      },
+      "wall-rose": {
+        "role": "secondary",
+        "displayName": "Стена портрета",
+        "canonical": "#c99e99",
+        "tonalRamp": [
+          "oklch(15% 0.052 26.1)",
+          "oklch(25% 0.052 26.1)",
+          "oklch(35% 0.052 26.1)",
+          "oklch(45% 0.052 26.1)",
+          "oklch(55% 0.052 26.1)",
+          "oklch(65% 0.052 26.1)",
+          "oklch(78% 0.052 26.1)",
+          "oklch(92% 0.052 26.1)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "script-cover": {
+        "displayName": "script-cover",
+        "purpose": "«Приглашение» на конверте."
+      },
+      "script-greeting": {
+        "displayName": "script-greeting",
+        "purpose": "Обращение на первом экране."
+      },
+      "script-display": {
+        "displayName": "script-display",
+        "purpose": "Заголовки разделов."
+      },
+      "script-line": {
+        "displayName": "script-line",
+        "purpose": "Длинный заголовок в одну строку."
+      },
+      "script-title": {
+        "displayName": "script-title",
+        "purpose": "Названия событий."
+      },
+      "script-title-wide": {
+        "displayName": "script-title-wide",
+        "purpose": "Названия событий с 900px."
+      },
+      "script-caption": {
+        "displayName": "script-caption",
+        "purpose": "Подписи к фотографиям и названия городов."
+      },
+      "script-note": {
+        "displayName": "script-note",
+        "purpose": "Слово в медальоне и финальная фраза."
+      },
+      "script-note-wide": {
+        "displayName": "script-note-wide",
+        "purpose": "То же с 900px."
+      },
+      "numerals": {
+        "displayName": "numerals",
+        "purpose": "Время события и число календаря."
+      },
+      "numerals-wide": {
+        "displayName": "numerals-wide",
+        "purpose": "То же с 900px."
+      },
+      "numerals-small": {
+        "displayName": "numerals-small",
+        "purpose": "Время в медальоне и число на «луне»."
+      },
+      "numerals-small-wide": {
+        "displayName": "numerals-small-wide",
+        "purpose": "То же с 900px."
+      },
+      "lead": {
+        "displayName": "lead",
+        "purpose": "Курсивный вводный абзац."
+      },
+      "lead-wide": {
+        "displayName": "lead-wide",
+        "purpose": "То же с 900px."
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "Основной текст и адреса."
+      },
+      "note": {
+        "displayName": "note",
+        "purpose": "Пояснения и подсказки."
+      },
+      "text-wide": {
+        "displayName": "text-wide",
+        "purpose": "Основной текст и пояснения с 900px."
+      },
+      "small": {
+        "displayName": "small",
+        "purpose": "Дни недели и строка дат."
+      },
+      "caps": {
+        "displayName": "caps",
+        "purpose": "Кнопки и подпись под печатью."
+      },
+      "caps-small": {
+        "displayName": "caps-small",
+        "purpose": "Месяц на календаре, подсказка прокрутки."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-lift",
+        "value": "drop-shadow(0 20px 26px rgb(97 52 58 / 0.24)) drop-shadow(0 3px 5px rgb(97 52 58 / 0.2))",
+        "purpose": "Паспарту арки и финальный конверт над кремовой бумагой."
+      },
+      {
+        "name": "dusk-lift",
+        "value": "drop-shadow(0 22px 32px rgb(18 3 8 / 0.55)) drop-shadow(0 2px 4px rgb(18 3 8 / 0.5))",
+        "purpose": "Арка на вечернем бордовом поле."
+      },
+      {
+        "name": "flap-fold",
+        "value": "drop-shadow(0 2px 3px rgb(106 52 60 / 0.22)) drop-shadow(0 7px 14px rgb(106 52 60 / 0.13))",
+        "purpose": "Верхняя и нижняя створки конверта поверх боковых."
+      },
+      {
+        "name": "medal",
+        "value": "0 12px 22px rgb(97 52 58 / 0.22), 0 2px 4px rgb(97 52 58 / 0.22), inset 0 0 0 1px rgb(255 255 255 / 0.6)",
+        "purpose": "Серебряный медальон."
+      },
+      {
+        "name": "seal",
+        "value": "drop-shadow(0 7px 8px rgb(74 24 32 / 0.42)) drop-shadow(0 1px 2px rgb(74 24 32 / 0.4))",
+        "purpose": "Сургучная печать на конверте."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-paper",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Все появления: бумага, фото, каллиграфия, чернила."
+      },
+      {
+        "name": "ease-fold",
+        "value": "cubic-bezier(0.65, 0, 0.25, 1)",
+        "purpose": "Отгиб створок конверта."
+      },
+      {
+        "name": "open-sequence",
+        "value": "1.34s",
+        "purpose": "Полная длительность вскрытия конверта."
+      },
+      {
+        "name": "paper",
+        "value": "0.95s",
+        "purpose": "Раскрытие бумажного листа и нити через clip-path."
+      },
+      {
+        "name": "photo",
+        "value": "1.1s–1.6s",
+        "purpose": "Проявление фотографии из сепии."
+      },
+      {
+        "name": "script",
+        "value": "1.15s",
+        "purpose": "Каллиграфия пишется слева направо."
+      },
+      {
+        "name": "ink",
+        "value": "0.7s",
+        "purpose": "Текст проступает с подъёмом на 10px."
+      },
+      {
+        "name": "letter-scroll",
+        "value": "scroll-linked translateY 44% → 0",
+        "purpose": "Записка в финале выдвигается из конверта вслед за прокруткой."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-phone",
+        "value": "370px"
+      },
+      {
+        "name": "wide",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Map Link",
+      "kind": "button",
+      "refersTo": "map-link",
+      "description": "Кнопка карты: прописные с разрядкой на бордовой плашке с вогнутыми углами; фокус рисуется внутри плашки.",
+      "html": "<a class=\"ds-map\" href=\"#\">Открыть на карте</a>",
+      "css": ".ds-map{display:inline-flex;align-items:center;min-height:52px;padding:0 28px 0 30px;font:700 .8rem 'Old Standard TT',Georgia,serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#faf2e9;background:#7a2f38;-webkit-mask:radial-gradient(9px at 0 0,#0000 96%,#000) 0 0/51% 51% no-repeat,radial-gradient(9px at 100% 0,#0000 96%,#000) 100% 0/51% 51% no-repeat,radial-gradient(9px at 0 100%,#0000 96%,#000) 0 100%/51% 51% no-repeat,radial-gradient(9px at 100% 100%,#0000 96%,#000) 100% 100%/51% 51% no-repeat;mask:radial-gradient(9px at 0 0,#0000 96%,#000) 0 0/51% 51% no-repeat,radial-gradient(9px at 100% 0,#0000 96%,#000) 100% 0/51% 51% no-repeat,radial-gradient(9px at 0 100%,#0000 96%,#000) 0 100%/51% 51% no-repeat,radial-gradient(9px at 100% 100%,#0000 96%,#000) 100% 100%/51% 51% no-repeat;transition:background-color .25s ease}.ds-map:hover{background:#5a222c}.ds-map:focus-visible{outline:2px solid #faf2e9;outline-offset:-7px}"
+    },
+    {
+      "name": "Map Link (вечер)",
+      "kind": "button",
+      "refersTo": "map-link-dusk",
+      "description": "Та же кнопка на бордовом поле главы венчания: светлая плашка, бордовый текст.",
+      "html": "<div class=\"ds-dusk\"><a class=\"ds-map-dusk\" href=\"#\">Открыть на карте</a></div>",
+      "css": ".ds-dusk{padding:24px;background:#4f1e29}.ds-map-dusk{display:inline-flex;align-items:center;min-height:52px;padding:0 28px 0 30px;font:700 .8rem 'Old Standard TT',Georgia,serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#5a222c;background:#f7ece5;-webkit-mask:radial-gradient(9px at 0 0,#0000 96%,#000) 0 0/51% 51% no-repeat,radial-gradient(9px at 100% 0,#0000 96%,#000) 100% 0/51% 51% no-repeat,radial-gradient(9px at 0 100%,#0000 96%,#000) 0 100%/51% 51% no-repeat,radial-gradient(9px at 100% 100%,#0000 96%,#000) 100% 100%/51% 51% no-repeat;mask:radial-gradient(9px at 0 0,#0000 96%,#000) 0 0/51% 51% no-repeat,radial-gradient(9px at 100% 0,#0000 96%,#000) 100% 0/51% 51% no-repeat,radial-gradient(9px at 0 100%,#0000 96%,#000) 0 100%/51% 51% no-repeat,radial-gradient(9px at 100% 100%,#0000 96%,#000) 100% 100%/51% 51% no-repeat}.ds-map-dusk:hover{background:#ecd5d5}"
+    },
+    {
+      "name": "Scratch Medallion",
+      "kind": "card",
+      "refersTo": "scratch-medallion",
+      "description": "Медальон в серебряном ободке; время и событие закрыты стираемым слоем серебра.",
+      "html": "<div class=\"ds-medal\"><div class=\"ds-medal__face\"><span class=\"ds-medal__time\">12:30</span><span class=\"ds-medal__what\">роспись</span></div></div>",
+      "css": ".ds-medal{width:168px;aspect-ratio:1;padding:7px;border-radius:50%;background:linear-gradient(135deg,#f6f4f2 0%,#a59f9d 28%,#efecea 52%,#8f8987 76%,#dedad8 100%);box-shadow:0 12px 22px rgb(97 52 58/.22),0 2px 4px rgb(97 52 58/.22),inset 0 0 0 1px rgb(255 255 255/.6)}.ds-medal__face{display:grid;place-content:center;justify-items:center;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 40% 30%,#fffaf3,#faf2e9 55%,#efe1d5);box-shadow:inset 0 3px 7px rgb(97 52 58/.24)}.ds-medal__time{font:400 2.6rem/1 'Old Standard TT',Georgia,serif;color:#7a2f38}.ds-medal__what{font:400 1.9rem/1.08 'Great Vibes',cursive;color:#8f4a56}"
+    },
+    {
+      "name": "Keel Arch",
+      "kind": "card",
+      "refersTo": "keel-arch",
+      "description": "Килевидное паспарту для фотографии: светлая бумага, линия фольги, тёплая тень по контуру.",
+      "html": "<div class=\"ds-arch\"><div class=\"ds-arch__photo\"></div></div>",
+      "css": ".ds-arch{position:relative;width:220px;aspect-ratio:4/5;filter:drop-shadow(0 20px 26px rgb(97 52 58/.24)) drop-shadow(0 3px 5px rgb(97 52 58/.2))}.ds-arch::before{content:'';position:absolute;inset:0;background:#faf2e9;-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat}.ds-arch__photo{position:absolute;inset:12px;background:linear-gradient(180deg,#dbb5b8,#a86d76);-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat}"
+    },
+    {
+      "name": "Date Moon",
+      "kind": "card",
+      "refersTo": "date-moon",
+      "description": "Дата 24 октября: светлая «луна» на вечернем поле.",
+      "html": "<div class=\"ds-dusk\"><div class=\"ds-moon\"><span class=\"ds-moon__caps\">Октябрь</span><b>24</b><i>суббота</i><span class=\"ds-moon__caps\">2026</span></div></div>",
+      "css": ".ds-dusk{padding:24px;background:#4f1e29}.ds-moon{display:grid;align-content:center;justify-items:center;width:154px;aspect-ratio:1;border-radius:50%;color:#5a222c;font-family:'Old Standard TT',Georgia,serif;background:radial-gradient(circle at 36% 28%,#fffaf4,#efe1d8 58%,#cdbbb6 100%);box-shadow:0 0 0 1px #e9e2df,0 0 0 6px rgb(255 240 236/.09),0 0 44px rgb(255 214 208/.24),0 14px 26px rgb(18 3 8/.5)}.ds-moon b{font-weight:400;font-size:2.7rem;line-height:1.1}.ds-moon i{font-size:1rem}.ds-moon__caps{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7a2f38}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Тиснёный конверт из семейной шкатулки",
+    "overview": "Приглашение — письмо, которое вскрывают по сургучной печати: пудровый конверт со слепым тиснением роз, внутри арочные бумажные окна с фотографиями, серебряные медальоны со стираемым слоем и нить, связывающая два дня.",
+    "keyCharacteristics": [
+      "Физические предметы вместо UI-блоков: конверт, сургуч, паспарту, отрывной календарь, открытка, веер тканей.",
+      "Одна рамка на всю страницу — килевидная арка.",
+      "Один авторский рисунок флористики в двух материалах: слепое тиснение и бумажные розы.",
+      "Каллиграфия для чувства, антиква русской печати для фактов.",
+      "Утро на кремовой бумаге, вечер на бордовом поле с закатным свечением.",
+      "Звук — часть предметного мира: сургуч, бумага, серебро и тихая мелодия, только после нажатия гостя."
+    ],
+    "rules": [
+      {
+        "name": "The Paper Light Rule",
+        "body": "Тон поверхности меняется, только когда меняется свет или материал; декоративных цветных плашек нет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Silver Is Foil Rule",
+        "body": "Серебро всегда градиент-фольга и всегда тонкое: линия, ободок, нить, заклёпка.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evening Rule",
+        "body": "Бордовое поле принадлежит только главе 24 октября; розовое свечение за аркой подхватывает стену на портрете пары.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Каллиграфия никогда не несёт факт, по которому гость будет действовать; время, адрес и день недели набраны антиквой.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Script Abbreviations Rule",
+        "body": "Аббревиатуры каллиграфией не набираются: «Роспись» — каллиграфия, «в ЗАГСе» — курсив антиквы.",
+        "section": "typography"
+      },
+      {
+        "name": "The Object Shape Rule",
+        "body": "Форма берётся у предмета: письмо, отпечаток, медальон, лист календаря, лоскут ткани.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do оставлять фотографии главными: детское фото и портрет пары — самые крупные элементы своих сцен.",
+      "Do править все фразы в src/content/invitation.ts.",
+      "Do проверять новые размеры от 320px; адреса и дни недели не мельче 15px.",
+      "Do давать каждому движению физический смысл из грамматики: бумага, фото, каллиграфия, чернила."
+    ],
+    "donts": [
+      "Don't возвращать прямоугольные карточки, скруглённые панели, стекло, неон и технологичные градиенты.",
+      "Don't писать, что пара знакома с детства: совместный детский снимок собран из двух отдельных фотографий.",
+      "Don't набирать каллиграфией время, адреса и аббревиатуры.",
+      "Don't использовать золото, чистый белый и стоковые цветы.",
+      "Don't добавлять имена, RSVP, таймер, подарки и неподтверждённые факты; «Тили-тили тесто» запрещено.",
+      "Don't включать звук без действия гостя и добавлять звуки элементам без физического прообраза."
+    ]
+  }
+}

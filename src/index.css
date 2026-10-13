@@ -1,0 +1,191 @@
+:root {
+  /* Бумага */
+  --paper: #f2e7dc;
+  --paper-light: #faf2e9;
+  --paper-deep: #e6d6c8;
+  /* Пудровый конверт и ткань */
+  --envelope: #e7d0cc;
+  --envelope-light: #f0dedb;
+  --envelope-shade: #d7bab6;
+  /* Пыльная роза */
+  --rose-powder: #ecd5d5;
+  --rose-light: #dbb5b8;
+  --rose: #c9979d;
+  --rose-muted: #a86d76;
+  /* Бордовая краска и вечер */
+  --wine: #7a2f38;
+  --wine-deep: #5a222c;
+  --wine-night: #4f1e29;
+  /* Тёплые чернила */
+  --ink: #43383a;
+  --ink-soft: #6a585b;
+  /* Холодное серебро */
+  --silver-hi: #f6f4f2;
+  --silver: #b9b4b2;
+  --silver-lo: #8a8482;
+  --foil: linear-gradient(
+    135deg,
+    var(--silver-hi) 0%,
+    var(--silver) 28%,
+    var(--silver-hi) 52%,
+    var(--silver-lo) 76%,
+    var(--silver) 100%
+  );
+  /* Служебные тона */
+  --rose-deep: #8f4a56;
+  --wax-light: #a54f5a;
+  --sepia: #d8bfa8;
+  /* Цвет стены на портрете пары: им продолжается фон над кадром в арке. */
+  --wall-rose: #c99e99;
+  /* Образцы ткани дресс-кода */
+  --swatch-graphite: #625657;
+  --swatch-dusty-rose: #a6787c;
+  --swatch-soft-rose: #c68e93;
+  --swatch-powder: #dcb4bb;
+  --swatch-light-powder: #ead0d5;
+  --swatch-rose-accent: #de8e9a;
+  --swatch-coral: #b85f60;
+  --swatch-burgundy: #84474a;
+
+  /* Шкала шрифта: каллиграфия */
+  --fs-script-cover: clamp(3rem, min(15.5vw, 9vh), 5.6rem);
+  --fs-script-greeting: clamp(2.7rem, min(12.6vw, 7.6vh), 5rem);
+  --fs-script-display: clamp(3.3rem, 15.5vw, 5.4rem);
+  --fs-script-line: clamp(2.6rem, 12.6vw, 5.4rem);
+  --fs-script-title: clamp(2.3rem, 10.6vw, 3.3rem);
+  --fs-script-caption: clamp(1.9rem, 8.8vw, 3rem);
+  --fs-script-note: clamp(1.8rem, 8.6vw, 2.35rem);
+  /* Шкала шрифта: цифры и текст антиквой */
+  --fs-numerals: clamp(2.5rem, 12vw, 3.7rem);
+  --fs-numerals-small: clamp(2rem, 9.6vw, 2.8rem);
+  --fs-lead: 1.25rem;
+  --fs-body: 1.125rem;
+  --fs-note: 1.0625rem;
+  --fs-small: 1rem;
+  --fs-caps: clamp(0.74rem, 3.1vw, 0.9rem);
+  --fs-caps-small: 0.72rem;
+
+  --font-script: 'Great Vibes', 'Snell Roundhand', cursive;
+  --font-serif: 'Old Standard TT', 'Iowan Old Style', Georgia, serif;
+
+  --ease-paper: cubic-bezier(0.22, 1, 0.36, 1);
+  --gutter: clamp(16px, 5.4vw, 28px);
+
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .27 .17 0 0 0 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  --keel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E");
+
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-color: var(--rose) var(--paper);
+  accent-color: var(--wine);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--paper);
+}
+
+body[data-invitation='closed'],
+body[data-invitation='opening'] {
+  overflow: hidden;
+}
+
+::selection {
+  color: var(--paper-light);
+  background: var(--wine);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 4px;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Два голоса типографики: каллиграфия для чувства, антиква старой печати для фактов. */
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.caps {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
