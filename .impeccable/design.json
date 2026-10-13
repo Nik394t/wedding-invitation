@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T10:45:15+03:00",
+  "generatedAt": "2026-10-13T10:49:01+03:00",
   "title": "Design System: Свадебное приглашение",
   "extensions": {
     "colorMeta": {
@@ -483,6 +483,21 @@
           "oklch(78% 0.031 27.8)",
           "oklch(92% 0.031 27.8)"
         ]
+      },
+      "shadow-wine": {
+        "role": "neutral",
+        "displayName": "Оттенок теней",
+        "canonical": "#61343a",
+        "tonalRamp": [
+          "oklch(15% 0.065 12.1)",
+          "oklch(25% 0.065 12.1)",
+          "oklch(35% 0.065 12.1)",
+          "oklch(45% 0.065 12.1)",
+          "oklch(55% 0.065 12.1)",
+          "oklch(65% 0.065 12.1)",
+          "oklch(78% 0.065 12.1)",
+          "oklch(92% 0.065 12.1)"
+        ]
       }
     },
     "typographyMeta": {
@@ -596,6 +611,11 @@
         "name": "seal",
         "value": "drop-shadow(0 7px 8px rgb(74 24 32 / 0.42)) drop-shadow(0 1px 2px rgb(74 24 32 / 0.4))",
         "purpose": "Сургучная печать на конверте."
+      },
+      {
+        "name": "medal-well",
+        "value": "inset 0 3px 7px rgb(97 52 58 / 0.24)",
+        "purpose": "Углубление лицевой стороны медальона под серебром."
       }
     ],
     "motion": [
