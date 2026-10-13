@@ -182,6 +182,23 @@ test('round and arched shapes keep their proportions and scratching holds the pa
   expect(await page.evaluate(() => window.scrollY)).toBe(before)
 })
 
+test('a stale cached page reloads itself once when a newer build is published', async ({ page }) => {
+  const version = await (await page.request.get('/version.json')).json()
+  expect(await page.locator('meta[name="build"]').getAttribute('content')).toBe(version.build)
+  // Свежая страница себя не перезагружает.
+  expect(new URL(page.url()).searchParams.get('v')).toBeNull()
+
+  // Имитация старой копии в кэше: сервер сообщает о более новой сборке.
+  await page.route('**/version.json*', (route) => route.fulfill({ json: { build: 'newer-build' } }))
+  await page.goto('/')
+  await expect.poll(() => new URL(page.url()).searchParams.get('v')).toBe('newer-build')
+  await expect(page.getByRole('button', { name: 'Открыть приглашение' })).toBeVisible()
+  // Повторной перезагрузки нет: защита от зацикливания.
+  await page.waitForTimeout(700)
+  expect(new URL(page.url()).searchParams.get('v')).toBe('newer-build')
+  await openInvitation(page)
+})
+
 test('map links are safe external links to the confirmed addresses', async ({ page }) => {
   await openInvitation(page)
   const links = page.getByRole('link', { name: /Открыть на карте:/ })

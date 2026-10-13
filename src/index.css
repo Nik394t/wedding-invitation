@@ -99,8 +99,6 @@
 html {
   min-width: 320px;
   -webkit-text-size-adjust: 100%;
-  /* Без «резинки» и обновления страницы жестом вниз: они сбивали стирание серебра. */
-  overscroll-behavior-y: none;
 }
 
 body {
