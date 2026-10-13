@@ -29,6 +29,17 @@ python3 scripts/make-music.py    # фоновая мелодия
 
 Чтобы поставить свою запись, положите mp3 в `public/media/audio/` и укажите путь в `music.src` файла `src/content/invitation.ts`.
 
+## Публикация на GitHub Pages
+
+Репозиторий: `git@github.com:Nik394t/wedding-invitation.git`. В ветке `main` — исходники, в ветке `gh-pages` — готовая сборка, которую отдаёт GitHub Pages.
+
+```bash
+git add -A && git commit -m "Описание правки" && git push   # исходники
+bash scripts/deploy-pages.sh                                 # собрать и обновить сайт
+```
+
+Сборка использует относительные пути (`base: './'`), поэтому одинаково работает в корне домена, в Docker и в подпапке `nik394t.github.io/wedding-invitation/`.
+
 ## Где что лежит
 
 - `src/content/invitation.ts` — все фразы, даты, адреса и пути к фотографиям. Тексты править здесь.
