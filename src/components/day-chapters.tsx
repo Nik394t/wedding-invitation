@@ -19,47 +19,28 @@ function dateLabel(event: WeddingEvent) {
   return `${event.day} октября ${event.year} года, ${event.weekday}`
 }
 
-/** Лист отрывного календаря: утро, роспись. */
-function CalendarLeaf({ event }: { event: WeddingEvent }) {
-  const [before, , after] = event.calendar
+/** Календарь из трёх дней: нужная дата обведена сердцем от руки. */
+function CalendarStrip({ event }: { event: WeddingEvent }) {
   return (
-    <div className="leaf" role="img" aria-label={dateLabel(event)}>
-      <div className="leaf__sheet" aria-hidden="true">
-        <span className="leaf__holes" />
-        <span className="leaf__month">
-          {event.month} {event.year}
-        </span>
-        <span className="leaf__day">
-          <HeartRing className="heart-ring" />
-          <b>{event.day}</b>
-        </span>
-        <span className="leaf__weekday">{event.weekday}</span>
-        <span className="leaf__neighbours">
-          <i>{before.day}</i>
-          <i>{after.day}</i>
-        </span>
+    <div className="calendar" role="img" aria-label={dateLabel(event)}>
+      <div className="calendar__head script" aria-hidden="true">
+        <span>{event.month}</span>
+        <span>{event.year}</span>
       </div>
-    </div>
-  )
-}
-
-/** Серебряный медальон-луна: вечер, венчание. */
-function DateMoon({ event }: { event: WeddingEvent }) {
-  return (
-    <div className="moon" role="img" aria-label={dateLabel(event)}>
-      <span className="moon__month" aria-hidden="true">
-        {event.month}
-      </span>
-      <span className="moon__day" aria-hidden="true">
-        <HeartRing className="heart-ring" />
-        <b>{event.day}</b>
-      </span>
-      <span className="moon__weekday" aria-hidden="true">
-        {event.weekday}
-      </span>
-      <span className="moon__year" aria-hidden="true">
-        {event.year}
-      </span>
+      <div className="calendar__days" aria-hidden="true">
+        {event.calendar.map((item) => (
+          <div
+            className={item.active ? 'calendar__day calendar__day--active' : 'calendar__day'}
+            key={item.day}
+          >
+            <span className="calendar__weekday">{item.weekday}</span>
+            <span className="calendar__number">
+              {item.active && <HeartRing className="heart-ring" />}
+              <b>{item.day}</b>
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -113,13 +94,11 @@ export function DayChapters({ events }: { events: readonly WeddingEvent[] }) {
       </header>
 
       <article className="chapter chapter--registry" aria-labelledby="registry-title">
-        <div className="chapter__row">
-          <Reveal variant="paper" className="chapter__date">
-            <CalendarLeaf event={registry} />
-          </Reveal>
-          <Thread />
-          <What event={registry} />
-        </div>
+        <Reveal variant="paper" className="chapter__calendar">
+          <CalendarStrip event={registry} />
+        </Reveal>
+        <Thread />
+        <What event={registry} />
         <figure className="postcard">
           <div className="postcard__card">
             <Reveal variant="photo" className="postcard__print">
@@ -135,13 +114,11 @@ export function DayChapters({ events }: { events: readonly WeddingEvent[] }) {
 
       <article className="chapter chapter--church" aria-labelledby="church-title">
         <Thread className="thread--bridge" />
-        <div className="chapter__row chapter__row--mirrored">
-          <What event={church} />
-          <Thread />
-          <Reveal variant="paper" className="chapter__date">
-            <DateMoon event={church} />
-          </Reveal>
-        </div>
+        <Reveal variant="paper" className="chapter__calendar">
+          <CalendarStrip event={church} />
+        </Reveal>
+        <Thread />
+        <What event={church} />
         <figure className="arch arch--church" data-testid="church-photo">
           <div className="arch__mat">
             <Reveal variant="photo" className="arch__inner">

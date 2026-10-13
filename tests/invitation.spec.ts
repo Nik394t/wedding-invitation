@@ -134,6 +134,54 @@ test('the closing letter slides out of its envelope as the page scrolls', async 
   await expect(page.getByRole('heading', { name: 'Будем рады разделить эти дни с вами.' })).toBeVisible()
 })
 
+test('both chapters show the same three days with the heart on their own date', async ({ page }) => {
+  await openInvitation(page)
+  const calendars = page.locator('.calendar')
+  await expect(calendars).toHaveCount(2)
+  for (const [index, active] of [
+    [0, '23'],
+    [1, '24'],
+  ] as const) {
+    const calendar = calendars.nth(index)
+    await expect(calendar.locator('.calendar__number b')).toHaveText(['22', '23', '24'])
+    await expect(calendar.locator('.calendar__weekday')).toHaveText(['четверг', 'пятница', 'суббота'])
+    await expect(calendar.locator('.calendar__day--active b')).toHaveText(active)
+    await expect(calendar.locator('.heart-ring')).toHaveCount(1)
+  }
+})
+
+test('round and arched shapes keep their proportions and scratching holds the page still', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await openInvitation(page)
+  const shapes = await page.evaluate(() => {
+    const ratio = (selector: string) =>
+      [...document.querySelectorAll<HTMLElement>(selector)].map((node) => node.offsetWidth / node.offsetHeight)
+    return {
+      medals: ratio('.medal'),
+      heroArch: ratio('.arch--hero .arch__mat'),
+      churchArch: ratio('.arch--church .arch__mat'),
+      envelope: ratio('.closing__envelope'),
+      touchAction: getComputedStyle(document.querySelector('.medal__foil')!).touchAction,
+    }
+  })
+  for (const value of shapes.medals) expect(value).toBeCloseTo(1, 2)
+  expect(shapes.heroArch[0]).toBeCloseTo(4 / 5, 2)
+  expect(shapes.churchArch[0]).toBeCloseTo(3 / 4, 2)
+  expect(shapes.envelope[0]).toBeCloseTo(1 / 1.28, 2)
+  expect(shapes.touchAction).toBe('none')
+
+  // Стирание пальцем не должно прокручивать страницу.
+  const foil = page.getByRole('button', { name: /Стереть серебро/ }).first()
+  await foil.scrollIntoViewIfNeeded()
+  const before = await page.evaluate(() => window.scrollY)
+  const box = (await foil.boundingBox())!
+  await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.2)
+  await page.mouse.down()
+  await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.8, { steps: 8 })
+  await page.mouse.up()
+  expect(await page.evaluate(() => window.scrollY)).toBe(before)
+})
+
 test('map links are safe external links to the confirmed addresses', async ({ page }) => {
   await openInvitation(page)
   const links = page.getByRole('link', { name: /Открыть на карте:/ })
@@ -190,7 +238,7 @@ test('addresses and weekdays are set at 15px or larger', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 })
   await openInvitation(page)
   const sizes = await page.evaluate(() =>
-    [...document.querySelectorAll('address, .leaf__weekday, .moon__weekday, .dates__day span')].map((node) =>
+    [...document.querySelectorAll('address, .calendar__weekday, .dates__day span')].map((node) =>
       parseFloat(getComputedStyle(node).fontSize),
     ),
   )

@@ -7,6 +7,8 @@
   --envelope: #e7d0cc;
   --envelope-light: #f0dedb;
   --envelope-shade: #d7bab6;
+  --envelope-glow: #ecd7d3;
+  --envelope-dim: #dfc4c0;
   /* Пыльная роза */
   --rose-powder: #ecd5d5;
   --rose-light: #dbb5b8;
@@ -95,6 +97,8 @@
 html {
   min-width: 320px;
   -webkit-text-size-adjust: 100%;
+  /* Без «резинки» и обновления страницы жестом вниз: они сбивали стирание серебра. */
+  overscroll-behavior-y: none;
 }
 
 body {

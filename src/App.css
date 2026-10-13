@@ -193,7 +193,7 @@
   left: 50%;
   top: 52%;
   width: 170vmax;
-  aspect-ratio: 1;
+  height: 170vmax;
   translate: -50% -50%;
   background: radial-gradient(
     circle,
@@ -240,22 +240,22 @@
 }
 
 .flap--top .flap__paper {
-  --flap-light: linear-gradient(180deg, var(--envelope-light) 0%, color-mix(in srgb, var(--envelope-light) 55%, var(--envelope)) 100%);
+  --flap-light: linear-gradient(180deg, var(--envelope-light) 0%, var(--envelope-glow) 100%);
   clip-path: polygon(0 0, 100% 0, 50% 52%);
 }
 
 .flap--bottom .flap__paper {
-  --flap-light: linear-gradient(0deg, color-mix(in srgb, var(--envelope) 70%, var(--envelope-shade)) 0%, color-mix(in srgb, var(--envelope) 70%, var(--envelope-light)) 100%);
+  --flap-light: linear-gradient(0deg, var(--envelope-dim) 0%, var(--envelope-glow) 130%);
   clip-path: polygon(0 100%, 100% 100%, 50% 52%);
 }
 
 .flap--left .flap__paper {
-  --flap-light: linear-gradient(90deg, color-mix(in srgb, var(--envelope) 55%, var(--envelope-shade)) 0%, var(--envelope) 100%);
+  --flap-light: linear-gradient(90deg, var(--envelope-dim) 0%, var(--envelope) 100%);
   clip-path: polygon(0 0, 50% 52%, 0 100%);
 }
 
 .flap--right .flap__paper {
-  --flap-light: linear-gradient(270deg, color-mix(in srgb, var(--envelope) 40%, var(--envelope-shade)) 0%, color-mix(in srgb, var(--envelope) 88%, var(--envelope-shade)) 100%);
+  --flap-light: linear-gradient(270deg, var(--envelope-dim) -30%, var(--envelope) 125%);
   clip-path: polygon(100% 0, 50% 52%, 100% 100%);
 }
 
@@ -279,14 +279,14 @@
 }
 
 .flap--left .flap__spray {
-  --relief-face: color-mix(in srgb, var(--envelope) 88%, var(--envelope-shade));
+  --relief-face: var(--envelope);
   left: min(14.5vw, 8vh + 4vw);
   top: 45.5%;
   width: min(22vw, 11.5vh, 150px);
 }
 
 .flap--right .flap__spray {
-  --relief-face: color-mix(in srgb, var(--envelope) 78%, var(--envelope-shade));
+  --relief-face: var(--envelope);
   left: calc(100% - min(14.5vw, 8vh + 4vw));
   top: 45.5%;
   width: min(22vw, 11.5vh, 150px);
@@ -355,8 +355,9 @@
   position: absolute;
   left: 50%;
   top: 52%;
-  width: clamp(108px, min(31vw, 17vh), 152px);
-  aspect-ratio: 1;
+  --seal: clamp(108px, min(31vw, 17vh), 152px);
+  width: var(--seal);
+  height: var(--seal);
   translate: -50% -50%;
 }
 
@@ -543,7 +544,6 @@
 
 .arch__mat {
   position: relative;
-  aspect-ratio: var(--arch-ratio);
   filter: drop-shadow(0 20px 26px rgb(97 52 58 / 0.24)) drop-shadow(0 3px 5px rgb(97 52 58 / 0.2));
 }
 
@@ -555,6 +555,13 @@
   background-image: var(--grain);
   -webkit-mask: var(--keel) center / 100% 100% no-repeat;
   mask: var(--keel) center / 100% 100% no-repeat;
+}
+
+/* Высоту арки задаёт распорка: так пропорции одинаковы во всех мобильных браузерах. */
+.arch__mat::after {
+  content: '';
+  display: block;
+  padding-bottom: var(--arch-h);
 }
 
 .arch__foil {
@@ -601,10 +608,11 @@
   position: relative;
   display: grid;
   place-items: center;
+  min-height: 100vh;
   min-height: 100svh;
   padding: clamp(34px, 6.5vh, 76px) var(--gutter) clamp(18px, 3vh, 32px);
   text-align: center;
-  background: radial-gradient(120% 70% at 50% 34%, color-mix(in srgb, var(--paper-light) 75%, transparent), color-mix(in srgb, var(--paper-light) 0%, transparent) 70%);
+  background: radial-gradient(120% 70% at 50% 34%, rgb(250 242 233 / 0.75), rgb(250 242 233 / 0) 70%);
 }
 
 /* Лист выдвигается из конверта вверх — вместе со звуком выходящей бумаги. */
@@ -631,8 +639,8 @@
 }
 
 .arch--hero {
-  --arch-w: min(74vw, 46svh, 23rem);
-  --arch-ratio: 4 / 5;
+  --arch-w: min(74vw, 46vh, 23rem);
+  --arch-h: 125%;
   margin-top: clamp(22px, 4.6vh, 44px);
 }
 
@@ -773,9 +781,10 @@
 
 .medal {
   --rim: 7px;
+  --medal: clamp(124px, 38vw, 184px);
   position: relative;
-  width: clamp(124px, 38vw, 184px);
-  aspect-ratio: 1;
+  width: var(--medal);
+  height: var(--medal);
   padding: var(--rim);
   border-radius: 50%;
   background: var(--foil);
@@ -819,8 +828,12 @@
   border-radius: 50%;
   background: var(--silver);
   cursor: grab;
-  touch-action: pan-y;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silver-hi) 50%, transparent);
+  /* Пока палец стирает серебро, страница под ним не прокручивается и не масштабируется. */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  box-shadow: inset 0 0 0 1px rgb(246 244 242 / 0.5);
   transition:
     opacity 0.5s var(--ease-paper),
     transform 0.5s var(--ease-paper);
@@ -889,20 +902,13 @@
   padding: 0 var(--gutter) clamp(60px, 15vw, 112px);
 }
 
-.chapter__row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
-  align-items: center;
-  max-width: 31rem;
-  min-height: clamp(236px, 66vw, 300px);
-  margin: 0 auto;
-}
-
 .thread {
   position: relative;
   display: grid;
   place-items: center;
-  align-self: stretch;
+  width: 34px;
+  height: clamp(58px, 15vw, 88px);
+  margin: 0 auto;
 }
 
 .thread__line {
@@ -931,25 +937,71 @@
   margin: 0 auto;
 }
 
-.chapter__date {
-  display: grid;
-  justify-items: end;
-  padding-right: clamp(6px, 2.4vw, 16px);
-}
-
 .chapter__what {
-  padding-left: clamp(8px, 2.8vw, 18px);
-  text-align: left;
+  text-align: center;
 }
 
-.chapter__row--mirrored .chapter__date {
-  justify-items: start;
-  padding: 0 0 0 clamp(6px, 2.4vw, 16px);
+/* Календарь: три дня подряд, нужная дата обведена сердцем от руки. */
+.chapter__calendar {
+  margin-top: clamp(22px, 6vw, 36px);
 }
 
-.chapter__row--mirrored .chapter__what {
-  padding: 0 clamp(8px, 2.8vw, 18px) 0 0;
-  text-align: right;
+.calendar {
+  width: min(100%, 23rem);
+  margin: 0 auto;
+}
+
+.calendar__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 7% 8px;
+  font-size: var(--fs-script-title);
+  color: var(--wine);
+}
+
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--silver);
+  border-bottom: 1px solid var(--silver);
+}
+
+.calendar__day {
+  display: grid;
+  justify-items: center;
+  gap: clamp(12px, 3.4vw, 18px);
+  padding: clamp(16px, 4.4vw, 22px) 2px clamp(20px, 5.4vw, 28px);
+}
+
+.calendar__day + .calendar__day {
+  border-left: 1px solid var(--silver);
+}
+
+.calendar__weekday {
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.calendar__number {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.calendar__number b {
+  position: relative;
+  font-size: var(--fs-numerals);
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--ink);
+}
+
+.calendar__day--active b {
+  color: var(--wine);
 }
 
 .chapter__time {
@@ -983,91 +1035,15 @@
   line-height: 1.35;
 }
 
-/* Лист отрывного календаря */
-.leaf {
-  width: min(100%, 142px);
-  rotate: -3.5deg;
-  filter: drop-shadow(0 9px 12px rgb(97 52 58 / 0.22)) drop-shadow(0 1px 2px rgb(97 52 58 / 0.24));
-}
-
-.leaf__sheet {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  padding: 22px 8px 20px;
-  background-color: var(--paper-light);
-  background-image: var(--grain);
-  /* В масках цвет не виден — важна только непрозрачность, поэтому берётся токен чернил. */
-  -webkit-mask:
-    linear-gradient(var(--ink) 0 0) top / 100% calc(100% - 6px) no-repeat,
-    radial-gradient(circle at 50% 0, var(--ink) 5px, #0000 5.6px) bottom left / 10px 6px repeat-x;
-  mask:
-    linear-gradient(var(--ink) 0 0) top / 100% calc(100% - 6px) no-repeat,
-    radial-gradient(circle at 50% 0, var(--ink) 5px, #0000 5.6px) bottom left / 10px 6px repeat-x;
-}
-
-.leaf__holes {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 10px;
-  background: var(--foil);
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 30%, transparent);
-}
-
-.leaf__month {
-  font-size: var(--fs-caps-small);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--wine);
-}
-
-.leaf__day,
-.moon__day {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 100%;
-  margin: 17px 0 15px;
-}
-
-.leaf__day b,
-.moon__day b {
-  position: relative;
-  font-size: var(--fs-numerals);
-  font-weight: 400;
-  line-height: 1.1;
-  font-variant-numeric: lining-nums;
-}
-
+/* Сердце центрируется отступами, а не сдвигом: так оно стоит одинаково во всех браузерах. */
 .heart-ring {
+  --ring: clamp(76px, 23.5vw, 100px);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: clamp(80px, 23vw, 96px);
-  translate: -50% -50%;
+  width: var(--ring);
+  margin: calc(var(--ring) * -0.47) 0 0 calc(var(--ring) / -2);
   overflow: visible;
-}
-
-.leaf__weekday,
-.moon__weekday {
-  font-size: var(--fs-small);
-  font-style: italic;
-}
-
-.leaf__neighbours {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 4px;
-  padding: 0 4px;
-  font-size: var(--fs-caps);
-  color: var(--rose-muted);
-}
-
-.leaf__neighbours i {
-  font-style: normal;
 }
 
 /* Открытка с вогнутыми углами */
@@ -1097,7 +1073,6 @@
 }
 
 .postcard__print {
-  aspect-ratio: 1155 / 734;
   background: var(--sepia);
 }
 
@@ -1252,54 +1227,31 @@
   color: #f6e6df;
 }
 
+.chapter--church .calendar__head,
+.chapter--church .calendar__number b {
+  color: var(--paper-light);
+}
+
+.chapter--church .calendar__weekday {
+  color: var(--rose-powder);
+}
+
+.chapter--church .calendar__days,
+.chapter--church .calendar__day + .calendar__day {
+  border-color: var(--silver-lo);
+}
+
+.chapter--church .heart-ring path {
+  stroke: var(--rose-light);
+}
+
 .chapter--church .chapter__venue {
   color: var(--rose-powder);
 }
 
-.moon {
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  width: min(100%, 154px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  color: var(--wine-deep);
-  background: radial-gradient(circle at 36% 28%, var(--paper-light), var(--paper) 58%, var(--envelope-shade) 100%);
-  box-shadow:
-    0 0 0 1px #e9e2df,
-    0 0 0 6px rgb(255 240 236 / 0.09),
-    0 0 44px rgb(255 214 208 / 0.24),
-    0 14px 26px rgb(18 3 8 / 0.5);
-}
-
-.moon__month,
-.moon__year {
-  font-size: var(--fs-caps-small);
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--wine);
-}
-
-.moon__day {
-  margin: 11px 0 8px;
-}
-
-.moon__day b {
-  font-size: var(--fs-numerals-small);
-}
-
-.moon .heart-ring {
-  width: clamp(62px, 17.5vw, 74px);
-}
-
-.moon__year {
-  margin-top: 1px;
-}
-
 .arch--church {
   --arch-w: min(100%, 25rem);
-  --arch-ratio: 3 / 4;
+  --arch-h: 133.333%;
   margin-top: clamp(18px, 5vw, 30px);
 }
 
@@ -1309,12 +1261,8 @@
  * кадра растворяется маской. Сам файл не изменён, пропорции сохранены.
  */
 .arch--church .arch__inner {
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--wall-rose) 94%, var(--paper-light)),
-    var(--wall-rose) 50%,
-    color-mix(in srgb, var(--wall-rose) 94%, var(--ink))
-  );
+  background-color: var(--wall-rose);
+  background-image: linear-gradient(90deg, rgb(250 242 233 / 0.06), rgb(250 242 233 / 0) 50%, rgb(67 56 58 / 0.06));
 }
 
 .arch--church .arch__photo {
@@ -1439,9 +1387,9 @@
   border-radius: 5px 5px 50% 50% / 5px 5px 20px 20px;
   background-color: var(--tone);
   background-image:
-    repeating-linear-gradient(0deg, color-mix(in srgb, var(--silver-hi) 7%, transparent) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(0deg, rgb(246 244 242 / 0.07) 0 1px, rgb(246 244 242 / 0) 1px 3px),
     repeating-linear-gradient(90deg, rgb(0 0 0 / 0.05) 0 1px, rgb(0 0 0 / 0) 1px 3px),
-    linear-gradient(90deg, color-mix(in srgb, var(--silver-hi) 16%, transparent), transparent 42%, color-mix(in srgb, var(--ink) 12%, transparent));
+    linear-gradient(90deg, rgb(246 244 242 / 0.16), rgb(246 244 242 / 0) 42%, rgb(67 56 58 / 0.12));
   box-shadow:
     0 8px 12px rgb(74 30 38 / 0.26),
     0 1px 2px rgb(74 30 38 / 0.3);
@@ -1482,9 +1430,15 @@
 .closing__envelope {
   position: relative;
   width: min(100%, 25rem);
-  aspect-ratio: 1 / 1.28;
   margin: 0 auto;
   filter: drop-shadow(0 20px 26px rgb(97 52 58 / 0.22)) drop-shadow(0 2px 4px rgb(97 52 58 / 0.2));
+}
+
+/* Распорка задаёт высоту конверта: 128% от ширины. */
+.closing__envelope::before {
+  content: '';
+  display: block;
+  padding-bottom: 128%;
 }
 
 .closing__slot {
@@ -1521,7 +1475,7 @@
 .closing__pocket {
   position: absolute;
   inset: 48% 0 0;
-  background-image: var(--grain), linear-gradient(0deg, color-mix(in srgb, var(--envelope) 58%, var(--envelope-shade)) 0%, color-mix(in srgb, var(--envelope) 62%, var(--envelope-light)) 100%);
+  background-image: var(--grain), linear-gradient(0deg, var(--envelope-dim) 0%, var(--envelope-glow) 100%);
   clip-path: polygon(0 0, 50% 46%, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -1543,26 +1497,6 @@
   filter: drop-shadow(0 5px 6px rgb(74 24 32 / 0.4));
 }
 
-/* ───────── Узкие телефоны ───────── */
-
-@media (max-width: 370px) {
-  .moon__year {
-    display: none;
-  }
-
-  .moon__month {
-    letter-spacing: 0.05em;
-  }
-
-  .moon__day {
-    margin: 9px 0 6px;
-  }
-
-  .moon .heart-ring {
-    width: 58px;
-  }
-}
-
 /* ───────── Широкие экраны ───────── */
 
 @media (min-width: 900px) {
@@ -1581,13 +1515,21 @@
     display: block;
   }
 
+  .calendar {
+    width: 29rem;
+  }
+
+  .heart-ring {
+    --ring: 128px;
+  }
+
   .arch--hero {
-    --arch-w: min(40svh, 24rem);
+    --arch-w: min(40vh, 24rem);
   }
 
   .medal {
     --rim: 8px;
-    width: 212px;
+    --medal: 212px;
   }
 
   .chapter__where address {
@@ -1601,27 +1543,6 @@
   .fan {
     --blade-h: 236px;
     --blade-w: 62px;
-  }
-
-  .chapter__row {
-    max-width: 42rem;
-    min-height: 340px;
-  }
-
-  .leaf {
-    width: 176px;
-  }
-
-  .leaf .heart-ring {
-    width: 112px;
-  }
-
-  .moon {
-    width: 184px;
-  }
-
-  .moon .heart-ring {
-    width: 88px;
   }
 
   .postcard {

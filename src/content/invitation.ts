@@ -121,10 +121,11 @@ export const invitation = {
         height: 1181,
         alt: 'Жених обнимает невесту, оба улыбаются',
       },
+      // Те же три дня, что и в росписи: календарь не сдвигается, сердце просто переходит на 24.
       calendar: [
+        { weekday: 'четверг', day: '22' },
         { weekday: 'пятница', day: '23' },
         { weekday: 'суббота', day: '24', active: true },
-        { weekday: 'воскресенье', day: '25' },
       ],
     },
   ] satisfies WeddingEvent[],

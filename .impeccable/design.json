@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T09:12:34+03:00",
+  "generatedAt": "2026-10-13T10:45:15+03:00",
   "title": "Design System: Свадебное приглашение",
   "extensions": {
     "colorMeta": {
@@ -453,6 +453,36 @@
           "oklch(78% 0.052 26.1)",
           "oklch(92% 0.052 26.1)"
         ]
+      },
+      "envelope-glow": {
+        "role": "secondary",
+        "displayName": "Свет на створке",
+        "canonical": "#ecd7d3",
+        "tonalRamp": [
+          "oklch(15% 0.024 30.5)",
+          "oklch(25% 0.024 30.5)",
+          "oklch(35% 0.024 30.5)",
+          "oklch(45% 0.024 30.5)",
+          "oklch(55% 0.024 30.5)",
+          "oklch(65% 0.024 30.5)",
+          "oklch(78% 0.024 30.5)",
+          "oklch(92% 0.024 30.5)"
+        ]
+      },
+      "envelope-dim": {
+        "role": "secondary",
+        "displayName": "Полутень створки",
+        "canonical": "#dfc4c0",
+        "tonalRamp": [
+          "oklch(15% 0.031 27.8)",
+          "oklch(25% 0.031 27.8)",
+          "oklch(35% 0.031 27.8)",
+          "oklch(45% 0.031 27.8)",
+          "oklch(55% 0.031 27.8)",
+          "oklch(65% 0.031 27.8)",
+          "oklch(78% 0.031 27.8)",
+          "oklch(92% 0.031 27.8)"
+        ]
       }
     },
     "typographyMeta": {
@@ -655,19 +685,19 @@
       "css": ".ds-arch{position:relative;width:220px;aspect-ratio:4/5;filter:drop-shadow(0 20px 26px rgb(97 52 58/.24)) drop-shadow(0 3px 5px rgb(97 52 58/.2))}.ds-arch::before{content:'';position:absolute;inset:0;background:#faf2e9;-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat}.ds-arch__photo{position:absolute;inset:12px;background:linear-gradient(180deg,#dbb5b8,#a86d76);-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V42C0 23 17 12.5 34 7.5C42.5 5 47.5 3 50 0C52.5 3 57.5 5 66 7.5C83 12.5 100 23 100 42V100Z'/%3E%3C/svg%3E\") center/100% 100% no-repeat}"
     },
     {
-      "name": "Date Moon",
+      "name": "Calendar Strip",
       "kind": "card",
-      "refersTo": "date-moon",
-      "description": "Дата 24 октября: светлая «луна» на вечернем поле.",
-      "html": "<div class=\"ds-dusk\"><div class=\"ds-moon\"><span class=\"ds-moon__caps\">Октябрь</span><b>24</b><i>суббота</i><span class=\"ds-moon__caps\">2026</span></div></div>",
-      "css": ".ds-dusk{padding:24px;background:#4f1e29}.ds-moon{display:grid;align-content:center;justify-items:center;width:154px;aspect-ratio:1;border-radius:50%;color:#5a222c;font-family:'Old Standard TT',Georgia,serif;background:radial-gradient(circle at 36% 28%,#fffaf4,#efe1d8 58%,#cdbbb6 100%);box-shadow:0 0 0 1px #e9e2df,0 0 0 6px rgb(255 240 236/.09),0 0 44px rgb(255 214 208/.24),0 14px 26px rgb(18 3 8/.5)}.ds-moon b{font-weight:400;font-size:2.7rem;line-height:1.1}.ds-moon i{font-size:1rem}.ds-moon__caps{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7a2f38}"
+      "refersTo": "calendar-strip",
+      "description": "Три дня подряд в серебряных линейках; дата события обведена сердцем от руки. В обеих главах дни стоят на одних местах.",
+      "html": "<div class=\"ds-cal\"><div class=\"ds-cal__head\"><span>Октябрь</span><span>2026</span></div><div class=\"ds-cal__days\"><div><i>четверг</i><b>22</b></div><div class=\"is-on\"><i>пятница</i><b>23</b></div><div><i>суббота</i><b>24</b></div></div></div>",
+      "css": ".ds-cal{width:300px;font-family:'Old Standard TT',Georgia,serif;color:#43383a}.ds-cal__head{display:flex;justify-content:space-between;padding:0 7% 8px;font:400 2.3rem/1.08 'Great Vibes',cursive;color:#7a2f38}.ds-cal__days{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #b9b4b2;border-bottom:1px solid #b9b4b2}.ds-cal__days>div{display:grid;justify-items:center;gap:12px;padding:16px 2px 20px}.ds-cal__days>div+div{border-left:1px solid #b9b4b2}.ds-cal__days i{font-size:1rem;color:#6a585b}.ds-cal__days b{font-weight:400;font-size:2.6rem;line-height:1}.ds-cal__days .is-on b{color:#7a2f38}"
     }
   ],
   "narrative": {
     "northStar": "Тиснёный конверт из семейной шкатулки",
     "overview": "Приглашение — письмо, которое вскрывают по сургучной печати: пудровый конверт со слепым тиснением роз, внутри арочные бумажные окна с фотографиями, серебряные медальоны со стираемым слоем и нить, связывающая два дня.",
     "keyCharacteristics": [
-      "Физические предметы вместо UI-блоков: конверт, сургуч, паспарту, отрывной календарь, открытка, веер тканей.",
+      "Физические предметы вместо UI-блоков: конверт, сургуч, паспарту, календарь, открытка, веер тканей.",
       "Одна рамка на всю страницу — килевидная арка.",
       "Один авторский рисунок флористики в двух материалах: слепое тиснение и бумажные розы.",
       "Каллиграфия для чувства, антиква русской печати для фактов.",
@@ -702,7 +732,7 @@
       },
       {
         "name": "The Object Shape Rule",
-        "body": "Форма берётся у предмета: письмо, отпечаток, медальон, лист календаря, лоскут ткани.",
+        "body": "Форма берётся у предмета: письмо, отпечаток, медальон, календарь, лоскут ткани.",
         "section": "shapes"
       }
     ],

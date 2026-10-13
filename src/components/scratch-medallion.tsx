@@ -87,6 +87,18 @@ export function ScratchMedallion({ label, children }: ScratchMedallionProps) {
     paintFoil(canvas)
   }, [reduceMotion])
 
+  // React вешает touchmove пассивно, и отменить прокрутку из него нельзя. Поэтому свой
+  // слушатель: пока палец движется по серебру, жест принадлежит медальону, а не странице.
+  // touchstart не трогаем — иначе браузер не пришлёт click и простое касание перестанет открывать.
+  const foilRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    const foil = foilRef.current
+    if (!foil) return
+    const hold = (event: TouchEvent) => event.preventDefault()
+    foil.addEventListener('touchmove', hold, { passive: false })
+    return () => foil.removeEventListener('touchmove', hold)
+  }, [phase, reduceMotion])
+
   function finish(moveFocus: boolean) {
     if (phase !== 'foil') return
     sound.scratchStop()
@@ -191,6 +203,7 @@ export function ScratchMedallion({ label, children }: ScratchMedallionProps) {
       </div>
       {!reduceMotion && phase !== 'open' && (
         <button
+          ref={foilRef}
           type="button"
           className="medal__foil"
           aria-label={`Стереть серебро: ${label}`}
